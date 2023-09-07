@@ -1,0 +1,31 @@
+<div class='row'>
+	<div class='col-md'>
+		<div class=''>
+			<p class='fs-1'>Register</p>
+			{{#if registerError}}
+				<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+					<strong>Error!</strong>
+					{{registerError}}
+					<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+				</div>
+			{{/if}}
+			<form action='/register' method='post'>
+					<div class='form-floating mb-3 w-50'>
+						<input type='text'  name='firstname' id='floatingInput' placeholder='firstName' />
+					</div>
+					<div class='form-floating mb-3 w-50'>
+						<input type='text' name='lastname' id='floatingInput' placeholder='lastName' />
+					</div>
+				<div class='form-floating mb-3'>
+					<input type='email' name='email' id='floatingInput' placeholder='name@gmail.com' />
+				</div>
+				<div class='form-floating'>
+					<input type='password'  name='password' id='floatingPassword' placeholder='Password' />
+				</div>
+				<div class="mt-2">
+					<button type='submit' className="mt-2">Register</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

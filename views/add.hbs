@@ -1,0 +1,36 @@
+<div class='row'>
+	<div class='col-md-6'>
+		<div class=''>
+			<p class='fs-1'>Add products</p>
+			{{#if errorAddProducts}}
+				<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+					<strong>Error!</strong>
+					{{errorAddProducts}}
+					<button type='button' data-bs-dismiss='alert' aria-label='Close'></button>
+				</div>
+			{{/if}}
+			<form action='/add-products' method='post'>
+				<div class='form-floating mb-3'>
+					<input type='text' name='title' id='floatingInput' placeholder='title' />
+				</div>
+				<div class='form-floating mb-3'>
+					<textarea
+						placeholder='Description'
+						name='description'
+						id='floatingTextarea2'
+						style='height: 40px'
+					></textarea>
+				</div>
+				<div class='form-floating mb-3'>
+					<input type='text' name='image' id='floatingInput' placeholder='Image Url' />
+				</div>
+				<div class='input-group mb-3'>
+					<div class='form-floating'>
+						<input type='number' name='price' id='floatingInputGroup1' placeholder='Price' />
+					</div>
+				</div>
+				<button type='submit'>Add products</button>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,37 @@
+<div class=''>
+	<p class='fs-1'>Edit product</p>
+	{{#if errorEditProduct}}
+		<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+			<strong>Error!</strong>
+			{{errorEditProduct}}
+			<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+		</div>
+	{{/if}}
+	<form action='/edit-product/{{product._id}}' method='post'>
+		<div class='form-floating mb-3'>
+			<input type='text' value='{{product.title}}' name='title' id='floatingInput' placeholder='title' />
+		</div>
+		<div class='form-floating mb-3'>
+			<textarea
+				placeholder='Description'
+				name='description'
+				id='floatingTextarea2'
+				style='height: 40px'
+			>{{product.description}}</textarea>
+		</div>
+		<div class='form-floating mb-3'>
+			<input value='{{product.image}}' type='text' name='image' id='floatingInput' placeholder='Image' />
+		</div>
+		<div class='input-group mb-3'>
+			<div class='form-floating'>
+				<input
+					type='number'
+					value='{{product.price}}'
+					name='price'
+					placeholder='Price'
+				/>
+			</div>
+		</div>
+		<button type='submit' class=''>Edit product</button>
+	</form>
+</div>
